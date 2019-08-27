@@ -4,7 +4,10 @@ import store from "../store";
 
 import NavBar from "./nav-bar/nav-bar-container";
 import Hero from "./hero/hero-container";
+import Body from "./body/body"
 import Footer from "./footer/footer-container"
+import ThemeContextProvider from './contexts/ThemeContext'
+
 
 const App = () => {
   return (
@@ -13,10 +16,13 @@ const App = () => {
 
       {/*Place All Comps Below*/}
 
-      <NavBar />
-      <Hero />
-      <Footer/>
-
+      <ThemeContextProvider>
+          <NavBar />
+          <Hero />
+          <Body/>
+          <Footer/>
+      </ThemeContextProvider>
+    //
     </Provider>
   );
 };
